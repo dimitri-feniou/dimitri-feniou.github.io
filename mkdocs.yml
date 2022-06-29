@@ -1,9 +1,14 @@
 site_name: Projet DATAGRANDEST IA
+repo_url : https://github.com/dimitri-feniou/datagrandest-ia
+repo_name: datagrandest-ia
+extra:
+  homepage: https://dimitri-feniou.github.io/presentation/
 nav: 
-  - Documentation : 
-        - Contexte et installation: 'presentation.md'
-
+  - Documentation : 'index.md'
+  
+  - Schéma de l'application web : 'schema_web.md'
   - A propos : 'a_propos.md'
+  
          
 theme:
   name: material
@@ -30,6 +35,13 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github-square
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/dimitri-feniou/datagrandest-ia
+      name: Projet datagrandest-ia
 markdown_extensions:
   - def_list
   - admonition

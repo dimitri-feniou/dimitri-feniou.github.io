@@ -69,11 +69,32 @@ Le tableau regroupe pour chaques fiches :
 1. L'url de la fiche dont la similarité est testée
 2. L'url de la fiche similaire 
 3. La similarité cosinus entre les deux fiches
+
 #### Mettre à jour les données du tableau et choix de la similarité cosinus
-Les données du tableau peuvent être mis à jour en cliquant sur le button `Chargement de l'algorithme de similarité` sur la page réunissant la table.
+Les données du tableau peuvent être mis à jour en cliquant sur le button `Chargement de l'algorithme de similarité` sur la page contenant la table de similarité.
 Vous accéderez a une interface vous permettant de choisir la similarité cosinus (valeur entre 0 et 1).</br>
+Une fois chargement de l'algorithme terminé,les données sont stockés dans deux fichiers CSV `fiche select.csv` et `fiche similar.csv`,les données du tableau seront automatiquement mis à jour.
+
 <figure markdown>
 ![image info](image/capture_similarity.png)
 <figcaption>Interface Algorithme similarité </figcaption>
 </figure>
-## Extraction des thèmes 
+## Analyse des thèmes
+
+Pour visualiser à quel thèmes correspond chaque fiche de données sur le site datagrandest nous avons utilisé l'algorithme LDA ([Voir documentation](https://radimrehurek.com/gensim/models/ldamodel.html)) qui permet d'attribuer des sujets à chacun des documents : 
+
+- Via l'interface vous pouvez sélectionner le nombre de sujets à attribuer (par défaut 9)
+- Une visualisation sous forme de graphique permettant de déterminer les termes récurrent de chaque fiche
+<figure markdown>
+![image info](/image/analyses themes.png)
+<figcaption>Interface visualisation des thèmes </figcaption>
+</figure>
+
+### Choix du nombre de thèmes (optimisation des hyperparamètres)
+Pour savoir quel nombre de thèmes correspond le mieux a nos données il faut tester notre algorithme avec différents hyperparamètres est déterminer le nombre de thèmes le plus efficient.
+Dans le fichier `topic_modelling.ipynb` vous pouvez tester les hyperparamètres de l'algorithme (résultat obtenu dans le fichier `lda_tuning_results_new.csv`), puis visualiser le nombre de thème opimal pour vos données.
+
+<figure markdown>
+![image info](/image/output.png)
+<figcaption>Graphique du choix des thèmes </figcaption>
+</figure>
